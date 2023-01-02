@@ -1,0 +1,231 @@
+\documentclass[a4paper]{article}
+
+
+\usepackage{alphabeta} 
+\usepackage{enumitem} 
+\usepackage{mathtools}
+\usepackage{amsmath, amssymb} 
+\usepackage{amsthm}
+\usepackage{cancel} 
+\usepackage[margin=0.70in]{geometry} 
+\geometry{left=3cm,right=3cm,top=2.4cm,bottom=2.4cm}	%the page geometry as defined, A4=210x297mm
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage[center]{caption}
+\usepackage{textcomp}
+\usepackage{tabto}
+\usepackage{layout}
+\usepackage{bm}
+\usepackage{minipage-marginpar}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{dutchcal}
+\usepackage{derivative}
+\usepackage{esint}
+%\usepackage{biblatex}
+\usepackage{subcaption}
+\usepackage{booktabs}\usepackage{derivative}
+\usepackage[flushleft]{threeparttable}
+\usepackage[capbesideposition=outside,capbesidesep=quad]{floatrow}
+\usepackage{derivative}
+\usepackage[thinc]{esdiff}
+\usepackage{lipsum}
+\usepackage{arydshln}
+%%RENEW
+
+\newtheorem{problem}{Άσκηση}
+\newtheorem*{solution*}{Λύση}
+\newtheorem{definition}{Ορισμός}[subsection]
+\newtheorem{properties}{Ιδιότητες}[subsection]
+\newtheorem{theorem}{Θεώρημα}[subsection]
+\newtheorem{protash}{Πρόταση}[subsection]
+\newtheorem{porisma}{Πόρισμα}[subsection]
+\newtheorem{lemma}{Λήμμα}[subsection]
+\newtheorem*{prooof}{Απόδειξη}
+\newtheorem*{notes}{Παρατηρήσεις}
+\newtheorem*{note}{Παρατήρηση}
+\newtheorem*{app}{Εφαρμογή} 
+\newtheorem*{example}{Παράδειγμα}
+\newtheorem*{examples}{Παραδείγματα}
+
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+%\renewcommand{\labelenumi}{\roman{enumi}}
+\newcommand{\approxtext}[1]{\ensuremath{\stackrel{\text{#1}}{\approx}}}
+\renewcommand{\figurename}{Εικόνα.}
+\renewcommand{\tablename}{Πίνακας.}
+%\renewcommand\refname{New References Header}
+\renewcommand*\contentsname{Περιεχόμενα}
+%\DeclareDerivative{\odv}{\mathrm{d}}
+
+
+\begin{document}
+\begin{titlepage}			%makes a title page. Remember to change the author, CID, username and group number to what is appropriate for you!
+	\centering
+	{\scshape\LARGE Εθνικό Μετσόβιο Πολυτεχνείο\par}
+	{\scshape \LARGE Σ.Ε.Μ.Φ.Ε.\par}
+	\vspace{1cm}
+	{\huge\bfseries Παραμαγνητικός Συντονισμός Ηλεκτρονίων (EPR)\par}
+	\vspace{1cm}
+	{\Large\itshape Θωμόπουλος Σπύρος\par}		%remember to change these!
+	
+	%		{\large Group \@group\unskip\strut\par}
+	{\large spyros.thomop@gmail.com/ ge19042@mail.ntua.gr\par \hfill \\}% 		%remember to change these!
+	\vspace{1cm}
+	{\large Ημερμονηνία Παράδοσης 03/05/2022\par}
+\end{titlepage}
+
+\subsection*{Σκοπός}
+
+	Ο στόχος της εν λόγω εργαστηριακής άσκησης είναι να μελετήσουμε το φαινόμενο του παραμαγνητικού συντονισμού ηλεκτρονίων και ο προσδιορισμός του παράγοντα Landé για το spin ενός ασύζευκτου ηλεκτρονίου στην ένωση Diphenyl-picryl-hydrzyl (DPPH).
+	
+\subsection*{Θεωρητικά Στοιχεία}
+
+	\subsubsection*{Γενικά}
+		
+		Ο παραμαγνητικός συντονισμός των ηλεκτρονίων (EPR) σε ένα υλικό σχετίζεται άμεσα με την ύπαρξη του spin ηλεκτρονίων. Συγκεκριμένα, παρατηρείται σε άτομα με μη συμπληρωμένους εξωτερικούς φλοιούς τα οποία έχουν μη μηδενική στροφορμή και μπορούν να αλληλεπιδρούν με ένα εξωτερικά επιβαλλόμενο μαγνητικό πεδίο. 
+		
+		Αρχικά, όταν τοποθετούμε ένα μαγνητικό δίπολο με στροφορμή $\vec{J}=\vec{L}+\vec{S}$ και διπολική ροπή $\vec{\mu_J} =-g_J\mu_B\vec{J}$ σε ένα στατικό και ισχυρό εξωτερικό πεδίο $\vec{B_0}$, του ασκείται μία δύναμη Lorentz η οποία προκαλεί μία ροπή που τείνει να το ευθυγραμμίσει με το μαγνητικό πεδίο. Έτσι, το $\mu_J$ που είναι κάθετο στο επίπεδο της τροχίας του ηλεκτρονίου εκτελεί μεταπτωτική κίνηση με μία συχνότητα Larmor $\Omega_L = -\gamma_e B_0$.
+		
+		Για να έχουμε συντονισμό, θα πρέπει να εισάγουμε ένα περιστερφόμενο μαγνητικό πεδίο $\vec{B_{περ}}$ (με συχνότητα $\omega$)	, κάθετο στο στατικό $\vec{B_0}$. Αν πάμε σε ένα περιστερφόμενο σύστημα αναφοράς που περιστρέφεται μαζί με το μαγνητικό πεδίο, τότε, έχουμε μεταπτωτική κίνηση με συχνότητα $\Omega_L = \gamma_e\sqrt{(B_0-\omega/\gamma_e)^2+B_{περ}^2}$.
+		 Όταν έχουμε $\omega=\Omega_L$, τότε δεν υπάρχει σχετική κίνηση μεταξύ πεδίου και μαγνητικής ροπής και δημιουργείται μία ροπή που αντιστρέφει την φορά της μαγνητικής ροπής, διαδικασία για την οποία απαιτείται ποσό ενέργειας και γι' αυτό αυξάνονται οι απορροφήσεις του μαγνητικού πεδίου απ' το υλικό. 
+		 Αν $\omega\neq\Omega_L$ τότε δεν έχουμε μόνιμη ανατροπή των μαγνητικών διπόλων και οι απώλειες από την απορρόφηση του πεδίου είναι μικρές.
+		
+		\subsubsection*{Εισαγωγή της Κβαντομηχανικής}
+		
+		Ο γυρομαγνητικός λόγος, δηλαδή ο λόγος της μαγνητικής ροπής ενός διπόλου προς την αντίστοιχη στροφορμή του, είναι διπλάσιος για το σπιν απ' ότι για την τροχιακή στροφορμή. Για ένα άτομο, η συνολική στροφορμή προκύπτει από την πρόσθεση των δύο επιμέρους στρφορμών κια τότε ο γυρομογανητικός του λόγος θα είναι 
+		\begin{align*}
+			\mu_j &= -g\mu_B\sqrt{j(j+1)} \\ 
+			g     &= 1 + \frac{j(j+1)+s(s+1)-l(l+1)}{sj(j+1)}  
+		\end{align*}
+	όπου $g$ η παράγοντας Landé και $\mu_B=\frac{e\hbar}{2m_e}$ η μαγνητόνη του Bohr.
+	
+	Στο υλικό DPPH που θα μελετήσουμε η συνολική τροχιακή στροφορμή είναι $\vec{L}=0$ και γι' αυτό $\vec{J} = \vec{S}$, άρα από τις παραπάνω σχέσεις έχουμε:
+	\begin{align*}\label{1}
+		g = 1 + \frac{2s(s+1)+0}{2s(s+1)} = 2 \numberthis
+	\end{align*}
+		
+		Στα πλαίσια της Κβαντομηχανικής, οι στροφορμές παράλληλα στο μαγνητικό πεδίο $B_0$, δεν παρίρνουν αυθαίρετες τιμές, αλλά κβαντισμένες. Το DPPH δεν έχει τροχιακή στροφορμή αφού αυτή αντισταθμίζεται από το πεδίο των γειτονικών ατόμων. Άρα, η μαγνητική συμπεριφορά του καθορίζεται μόνο από το σπιν $S_z = \hbar m_S$, για $m_S=\pm1/2$, που δίνει δύο τιμές για την μαγνητική ροπή $\mu_S=\pm g_S\mu_B/2$. Τα δίπολα με ροπή διαφορετικού πρόσημου αποκτούν και διαφορετική ενέργεια εντός του μαγνητικού πεδίου $B_0$, με ενεργειακή διαφορά 
+		\begin{align*}\label{2}
+			\Delta E = 2\vec{\mu_S}\cdot \vec{B_0} = g_S\mu_B B_0 \numberthis
+		\end{align*}
+	προφανώς το δίπολο με $m_S=+1/2$ είναι παράλληλα προσανατολισμένο στο μαγνητικό πεδίο και γι' αυτό έχει και μικρότερη ενέργεια.
+	
+	Από την σχέση (\ref{2}) προκύπτει ότι η ενέργεια που απαιτείται για να προγματοποιηθεί μία αντιστροφή της μαγνητικής ροπής θα είναι $\Delta E$. Έτσι έχουμε ότι η συχνότητα $\omega$ του περιστρεφόμενου πεδίου θα πρέπει να είναι: 
+		\begin{align*}\label{3}
+			\hbar\omega = g_S\mu_BB_0 \Rightarrow \hbar\omega = \hbar \gamma_SB_0\Rightarrow\boxed{ \omega = \gamma_SB_0 = \Omega_L} \numberthis
+		\end{align*}
+	Άρα η συχνότητα Larmor καθορίζει την απαιτούμενη ενέργεια για να γίνει μία μετάβαση από την παράλληλη στην αντιπαράλληλη κατάσταση σπιν.
+	
+	
+	\subsubsection*{Πειραματικές Τροποποιήσεις}
+		Αρχικά, επειδή η δημιουργία κυκλικά πολωμένου μαγνητικού πεδίου είναι δύσκολη για συχνότητες της τάξης της συχνότητας Larmor $\sim100MHz$, την αντικαθιστούμε με γραμμική πόλωση. Αυτό μπορούμε να το κάνουμε διότι η γραμμική πόλωση μπορεί να θεωρηθεί ως επαλληλία δύο αντίθετα περιστρεφόμενων κυκλικών. 
+		
+		Επίσης, από την Στατιστική Φυσική, έχουμε ότι ο λόγος των πληθυσμών με σπιν στις δύο ενεργειακές στάθμες είναι ($N_1$ για σπιν παράλληλο στο πεδίο ,$N_2$ για σπιν αντιπαράλληλο στο πεδίο)	
+		\begin{align*}
+			\frac{N_2}{N_1} =& e^{-\frac{\Delta E}{kT}} \xRightarrow{\Delta E << kT}\\
+			\frac{N_2}{N_1} \simeq& 1 - \frac{\Delta E}{kT} = 1 - \frac{g_S\beta_BB_0}{kT}
+		\end{align*}
+	απ' όπου προκύπτει ότι σε θερμοκρασίες δωματίου η αλλαγή ενεργειακής κατάστασης συμβαίνει μόνο σε ένα μικρό ποσοστό των παράλληλα προσανατολισμένων ηλεκτρονίων, ενώ γενικά τα προσανατολισμένα ηλεκτρόνια τείνουν να αποπροσανατολιστούν από την θερμική κίνηση των ατόμων.
+	
+	Πειραματικά, μετράμε την μαγνητική επιδεκτικότητα $\textbf{\chi}\in\mathbb{C}$ καθώς μεταβάλλεται εντονότερα με την συχνότητα και η μορφή του σήματος που δίνει είναι γνωστή αναλυτικά.
+	
+	Ακόμη, όλα τα δίπολα δεν αντιλαμβάνονται το ίδιο μαγνητικό πεδίο, καθώς αυτό εξαρτάται και από το πεδίο των γειτονικών διπόλων. Γι' αυτό παρατηρούμε μία διασπορά στην συχνότητα Larmor που αντιστοιχεί στην συχνότητα συντονισμού των διπόλων, 
+	
+\begin{align*}\label{4}
+	\Delta\Omega_L = \gamma\Delta B_{in}		\numberthis
+\end{align*}	
+
+	 Η εν λόγω διασπορά προκαλεί μεταβολή στις στάθμες των διπόλων και διαπλάτυνση της καμπύλης παραμαγνητικών απορροφήσεων, δηλαδή του φανταστικού μέρους του $\textbf{\chi}$. Η διαπλάτυνση του $Im{\textbf{\chi}}$ αντιστοιχεί στο εύρος των συχνοτήτων στο μισό της μέγιστης τιμής του. Από την αναλυτική σχέση για την μαγνητική επιδεκτικότητα προκύπτει ότι 
+	\begin{align*}\label{5}
+		\Delta\omega_{0.5max} = 2(\omega'-\Omega_L) =&\frac{2}{T_2}\sqrt{1+\gamma^2\Beta_x^2T_1T_2}   \xRightarrow{\gamma^2B_0^2T_1T_2<<1} \\ 
+	    \Delta\omega_{0.5max} \simeq& \frac{2}{T_2}					\numberthis
+	\end{align*}
+όπου $\omega'$ είναι η συχνότητα για την οποία το $\textbf{\textbf{\chi}}$ μειώνεται στο μισό του μεγίστου του, $T_1$ είναι ο χρόνος για την αποκατάσταση της ισρορροπίας στην διεύθυνση $\hat{z}$  του $\vec{B_0}$ και $T_2$, ο χρόνος αποκατάστασης της ισορροπίας στις διευθύνσεις $\hat{x},\hat{y}$ κάθετα στο $\vec{B_0}$. Στο DPPH ο $T_1$ καθορίζεται από αλληλεπίδραση των διπόλων με το πλέγμα, ενώ ο $T_2$ καθορίζεται από την αλληλεπίδραση των διπόλων μεταξύ τους. 
+
+
+
+\subsection*{Πειραματική Διάταξη}
+
+	Η πειραματική διάταξη αποτελείται από: 
+		\begin{itemize}
+			\item[.] Παλμογράφο, όπου φαίνεται η καμπύλη παραμαγνητικών απωλειών 
+			\item[.] Ζεύγος πηνίων Helmholtz που παράγουν το σταθερό πεδίο με μία μικρή διαταρραχή.
+			\item[.] Τροφοδοτικό Συνεχούς και Εναλλασσόμενης τάσης για τα πηνία.% Το συνεχές παράγει το σταθερό πεδίο, ενώ το εναλλασσόμενο παράγει το μεταβαλλόμενο πεδίο.
+			\item[.] Γέφυρα εναλλασσόμενης τάσης - RLC που περιέχει τα πηνία και την ουσία DPPH στο εσωτερικό της.
+			\item[.] Μονάδα EPR που περιέχει την γεννήτρια με $f=146MHz$ και έναν ενισχυτή.
+			\item[.] Δύο πολύμετρα , ένα για την μέτρηση του εναλασσόμενου και του συνεχούς ρεύματος και ένα βοηθητικό για την μέτρηση τάσης 
+		\end{itemize}
+
+			Τα πηνία Helmholtz παράγουν το μαγνητικό πεδίο $\textbf{B} = \textbf{B}_0 + \Delta\textbf{B}_0sin(\omega_m t) $ μέσα στο οποίο τοποθετείται η ουσία DPPH. Το πεδίο στο κέντρο των πηνίων είναι 
+			\begin{align*}\label{6}
+				B_0 = 0.6445\mu_0\frac{nI}{r} = 4.07\times10^{-3}I \numberthis
+			\end{align*}
+			όπου $n=241$ ο αριθμός των σπειρών, $r=0.048m$ η ακτίνα των πηνίων, $\mu_0 = 4\pi\times10^{-7}H/m$ η μαγνητική διαπερατότητα του κενού και $I$ το ρεύμα που διαρρεύει τα πηνία. Έτσι, από την σχέση (\ref{3}) παίρνουμε 
+			\begin{align*}\label{7}
+				g_s = \frac{hf}{\mu_BB_{0,max}} = \frac{2.565}{I_{res}}  \numberthis
+			\end{align*}
+			
+	\subsection*{Πειραματική Διαδικασία - Επεξεργασία Μετρήσεων}
+	
+		\subsubsection*{Παράγοντας Landé}
+			Αφού συνδέσουμε το κύκλωμα και ανοίξουμε τα οργανα και καθώς αυξάνουμε αργά την τάση εξόδου του τροφοδοτικού μέχρι να εμφανιστούν δύο καμπύλες. Ευθυγραμμίζουμε τις δύο καμπύλες με το phase από την μονάδα EPR και το ρεύμα στα πηνία. Όταν ευθυγραμμιστούν καταγράφουμε την ένδειξη του ρεύματος καθώς αυτή πρόκειται για το $I_{res} = 1.243A$. Το σφάλμα του είναι $\Delta I_{res} = 2\%I_{res}+ 5\cdot0.001 = 0.02986 \simeq = 0.030A$, άρα 
+			\begin{align*}
+				I_{res} = ( 1.243 \pm 0.030 ) A
+			\end{align*}
+	άρα από την σχέση (\ref{7}) έχουμε ότι\footnotemark:
+		\begin{align*}
+			g_s = ( 2.06 \pm  0.05)	
+		\end{align*}				
+	\footnotetext{Το σφάλμα προκύπτει από διάδοση $\delta g_s = \sqrt{\left( \pdv{g_s}{I_{res}}\delta I_{res}\right)^2} = \frac{2.565}{I_{res}^2}\delta I_{res} = 0.049804 \simeq 0.05$}
+	Παρατηρώ ότι παρ'όλο που το αποτέλεσμα δεν περιέχει στα ορια του σφάλματός του το αναμενόμενο $g_s=2$, η απόκλισή του από αυτο είναι $\sim 3\%$ που είναι πολύ ικανοποιητική για τα δεδομένα του πειράματος.
+	
+	\subsubsection*{Διαπλάτυνση Καμπύλης Συντονισμού και Χρόνος Αποκατάστασης $T_2$}
+	
+		Αρχικά, μετράμε το πλάτος $2\Delta B_0$ στην ''βάση'' της καμπύλης,  το οποίο και βρίσκουμε $S_0 = (4.6\pm0.1)divs$ και το πλάτος στο μισό της έντασης το οποίο και βρίσκουμε $S_{0.5} = (0.7\pm0.1)divs$. 
+		
+		Προκειμένου να χρησιμοποιήσουμε την θεωρητική σχέση (\ref{6}), θέτουμε το αμπερόμετρο στην λειτουργία AC και έτσι μετράμε την μεταβαλλόμενη συνιστώσα $\Delta I_0$ του συνολικού ρεύματος $I = I_0 + \Delta I_0$. Την εν λόγω τιμή την βρίσκουμε: \footnotemark
+		\begin{align*}
+			I_{AC} = (0.185 \pm 0.009) A
+		\end{align*}
+	\footnotetext{Το σφάλμα προκύπτει: $\delta I_{AC} = 2.5\%I_{AC} + 5\cdot0.005 = 0.009625\simeq 0.009A$}
+	
+	Από την σχέση (\ref{6}) παίρνουμε ότι 
+		\begin{align*}
+			2\Delta B_0 = 4.07 \times10^{-3} \underbrace{2\Delta I_0}_{=2\sqrt{2}I_{AC}} = 4.07\times10^{-3}2\sqrt{2}I_{AC}=0.0115I_{AC}
+		\end{align*}
+	Άρα \footnotemark
+		\begin{align*}
+			2\Delta B_0 = (2.1\pm 0.1)\times10^{-3} T
+		\end{align*}
+	\footnotetext{Πάλι το σφάλμα προκύπτει από διάδοση $\delta(2\Delta B_0) = \pdv{(2\Delta B_0)}{I_{AC}}\delta I_{AC}\simeq 0.1\times10^{-3}T$}
+	
+	Για το εύρος στο μέσο της καμπύλης ισχύει ότι\footnotemark
+		\begin{align*}
+			\Delta B_{0.5} = 2\Delta B_{0} \frac{S_{0.5}}{S_0} \pm \delta\Delta B_{0.5} \Rightarrow \boxed{\Delta B_{0.5} =(3.2\pm 0.5)\times10^{-4} T}
+		\end{align*}
+		\footnotetext{Πάλι από διάδοση έχουμε $\delta \Delta B_{0.5} = \sqrt{\left(\pdv{\Delta B_{0.5}}{(2\Delta B_{0})}\delta(2\Delta B_{0})\right)^2 + \left( \pdv{\Delta B_{0.5}}{S_0}\delta S_0\right)^2 + \left(\pdv{\Delta B_{0.5}}{S_{0.5}}\delta S_{0.5}\right)^2}=\sqrt{\left(\frac{S_{0.5}\delta(2\Delta B_0)}{S_0}\right)^2 + \left( \frac{(2\Delta B_{0})S_{0.5}\delta S_0}{S_0^2}\right)^2+\left(\frac{(2\Delta B_{0.5})\delta S_{0.5}}{S_0}\right)^2    }\simeq 0.04862\times10^{-3} \simeq 0.05\times10^{-3}T $}
+		παρατηρώ ότι η βιβλιογραφική τιμή των $2.8'\times10^{-4}T$ είναι εντός του σφάλματος, άρα το αποτέλεσμα είναι ικανοποιητικό.
+		
+		Τέλος, θα χρησιμοποιήσουμε την σχέση (\ref{5}) για τον προσδιορισμό του χρόνου αποκατάστασης $T_2$, θεωρώντας ότι η ισρορροπία στην άλλη διεύθυνση δεν συνεισφέρει στην διαπλάτυνση (δηλαδή $T_1>> T_2$) και άρα ότι $\Delta B_{0.5}\simeq\Delta B_{in}$.
+		Θα χρειαστούμε τον γυρομαγνητικό λόγο\footnotemark:
+			\begin{align*}
+				\gamma = \frac{g_s e}{2m_e} \pm \delta\gamma \Rightarrow \boxed{\gamma = (1.81 \pm 0.04)\times10^{11} C/kg }
+			\end{align*}					
+		\footnotetext{Tο σφάλμα προκύπτει από διάδοση $\delta \gamma = \pdv{\gamma}{g_s}\delta g_s = \frac{e}{2m_e}\delta g_s = 0.04395\times10^{11}\simeq 0.04^{11}C/kg$}
+		
+		Επίσης έχουμε από την σχέση (\ref{4})\footnotemark :
+			\begin{align*}
+				\Delta\omega_{0.5} = \Delta\Omega_L = \gamma\Delta B_{0.5} \pm \delta(\Delta\Omega_L) \Rightarrow \boxed{\Delta\omega_{0.5}=(57.9 \pm 9.1)MHz}
+			\end{align*}
+		\footnotetext{Το σφάλμα από διάδοση είναι: $\delta(\Delta\Omega_L) = \sqrt{\left(\pdv{(\Delta\Omega_L)}{\gamma}\delta\gamma\right)^2 + \left( \pdv{(\Delta\Omega_L)}{(\Delta B_{0.5})} \delta(\Delta B_{0.5})\right)^2} = 9.1401\simeq 9.1MHz$}
+			
+			Επομένως, από την σχέση (\ref{5}) έχουμε:\footnotemark
+				\begin{align*}
+					T_2 = \frac{2}{\Delta\Omega_L}\pm \delta T_2 \Rightarrow \boxed{T_2 = ( 35 \pm 5)ns}
+				\end{align*}
+		\footnotetext{Το σφάλμα: $\delta T_2 = |\pdv{T_2}{(\Delta\Omega_L)}\delta(\Delta\Omega_L)| = \frac{2}{(\Delta\Omega_L)^2}\delta(\Delta\Omega_L) = 5.449\simeq 5ns $}
+		
+		\subsection{Συμπεράσματα }
+			Εν τέλει, μπορούμε να πούμε πως το πειραμα ήταν επιτυχημένο, καθώς είτε τα αποτελέσματά μας ήταν κοντά στα αποδεκτά, είτε τα αποδεκτά βρίσκονταν στο περιθώριο του σφάλματος.
+\end{document} 

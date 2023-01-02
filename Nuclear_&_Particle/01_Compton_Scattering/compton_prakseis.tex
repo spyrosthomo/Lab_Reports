@@ -1,0 +1,59 @@
+Στον παρακάτω Πίνακα φαίνονται τα στοιχεία των τετραορμών των σωματιδίων πριν και μετά την σκέδαση.
+	\begin{table}[h!]
+		\centering 
+		\begin{tabular}{c|c|c}
+					 & Πριν  & Μετά \\\hline
+			$\gamma$ & $p_\gamma=(E,\bm{p_\gamma})$ &  $p_\gamma'=(E', \bm{p_\gamma'})$ \\
+			e        & $p_e     =(m_e,0)$                &  $p_e'=(E_e', \bm{p_e'})$
+		\end{tabular}
+		\label{tab}
+	\end{table}
+	
+	Από διατήρηση της τετραορμής έχουμε ότι 
+	\begin{align*}\label{eq1}
+		p_\gamma + p_e = p_\gamma'+p_e  \numberthis
+	\end{align*}
+	Στην οποία περιέχεται η διατήρηση της ενέργειας
+		\begin{align*}\label{eq2}
+			E +m_e = E' + E_e' \numberthis
+		\end{align*}
+	και της ορμής 
+		\begin{align*}\label{eq3}
+			\bm{p_\gamma} = \bm{p_\gamma'} + \bm{p_e'} \numberthis
+		\end{align*}
+	
+	Από την εξίσωση (\ref{eq2}) έχουμε ότι 
+		\begin{align*}\label{eq4}
+			|\bm{p_e'}|^2 =&  |\bm{p_\gamma'} -\bm{p_\gamma}  |^2 \xRightarrow{E^2=p^2+m^2}\\
+			E_e'^2 - m_e^2      =& |\bm{p_\gamma}'|^2 +|\bm{p_\gamma}|^2 -2\bm{p_\gamma}\cdot\bm{p_\gamma'}\Rightarrow\\
+			(E-E'+m_e)^2-m_e^2  =& E'^2 + E^2 - 2EE'cos\theta \Rightarrow\\
+			 \cancel{E^2} + \cancel{E'^2}+\cancel{m_e^2} + 2Em_e -2E'm_e -2EE' - \cancel{m_e^2}   =& \cancel{E^2} + \cancel{E'^2}-2EE'cos\theta \Rightarrow\\
+			 m_e(E-E')    =& EE'(1-cos\theta) \Rightarrow\\
+			    \frac{1}{E'} - \frac{1}{E} =& \frac{1-cos\theta}{m_ec^2}\numberthis
+		\end{align*}
+		
+		
+Από την παραπάνω σχέση προκύπτει πως η μέγιστη ενέργεια, άρα και κινητική ενέργεια) του ηλεκτρονίου επιτυγχάνεται όταν η Ε' είναι ελάχιστη, δηλαδή όταν το 1/Ε' είναι μέγιστο, δηλαδή από την σχέση (\ref{4}) όταν $\theta = \pi$. Έχουμε 
+	\begin{align*}\label{eq5}
+		T_e^{max} =& m_e(\gamma_{Lor.} -1)c^2 \Rightarrow\\
+				  =& m_e\gamma_{Lor.}c^2 - m_ec^2 \Rightarrow\\
+				  =& E_e'-m_ec^2 \xRightarrow{(\ref{eq2})}\\ 
+		          =& E - E' \numberthis
+	\end{align*}
+	
+Λύνουμε την εξίσωση (\ref{eq4}) προς E'  
+	\begin{align*}\label{eq6}
+		1/E' =& \frac{m_ec^2 + E- Ecos\theta}{Em_ec^2} \xRightarrow{\theta=\pi}\\
+			 =& \frac{m_ec^2 +2E }{m_ec^2E} \Rightarrow\\
+		E'   =& \frac{Em_ec^2}{m_ec^2 + 2E}	 	 \numberthis
+	\end{align*}
+	Αντικαθιστώντας την (\ref{eq6}) στην (\ref{eq5}) παίρνουμε την μέγιστη κινητική ενέργεια που μπορεί να έχει το ηλεκτρόνιο συναρτήσει της αρχικής ενέργειας του φωτονίου
+	\begin{align*}\label{eq7}
+		T_e^{max} =& E - \frac{Em_ec^2}{m_ec^2 + 2E}\Rightarrow\\
+		          =& \frac{2E^2}{m_ec^2 + 2E} \numberthis
+	\end{align*}
+	
+Αν την λύσουμε ως προς την μάζα του ηλεκτρονίου παίρνουμε ότι 
+	\begin{align*}\label{eq8}
+		 m_ec^2 =& \frac{2E(E-T_e^{max})}{T_e^{max}} \numberthis
+	\end{align*}
